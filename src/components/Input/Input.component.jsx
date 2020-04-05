@@ -14,10 +14,6 @@ const useStyles = makeStyles({
     width: '100%',
     marginTop: '1rem',
     marginBottom: '1rem'
-  },
-  label: {
-    // color: (props) => props.theme.palette.text.primary
-    color: 'red'
   }
 });
 

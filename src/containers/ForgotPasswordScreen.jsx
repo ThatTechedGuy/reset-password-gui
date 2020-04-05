@@ -10,7 +10,7 @@ import Form from '../components/FormControl/FormControl.component';
 const ForgotPasswordScreen = () => {
   return (
     <Section>
-      <img src={logo} alt="Key" />
+      <img src={logo} alt="Key" width='150px' style={{marginRight: 'auto'}}/>
       <Heading text="Set new password" />
       <Form>
         <Input text="New password" />
