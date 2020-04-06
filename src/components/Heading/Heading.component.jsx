@@ -3,7 +3,9 @@ import { Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    fontWeight: 700
+    fontWeight: 700,
+    textAlign: 'left',
+    marginRight:'auto'
   }
 });
 
