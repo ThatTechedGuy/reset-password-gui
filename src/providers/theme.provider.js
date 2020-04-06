@@ -21,8 +21,6 @@ let theme = createMuiTheme({
 });
 
 theme.palette.background.default = '#191726';
-theme.palette.text.primary = '#DCD8E5';
-
 
 /* Responsive font sizes */
 theme = responsiveFontSizes(theme);

@@ -1,6 +1,6 @@
 import React from 'react';
 import ForgotPassword from './containers/ForgotPasswordScreen';
-import { CssBaseline } from '@material-ui/core';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Theme from './providers/theme.provider';
 
 import './App.css';

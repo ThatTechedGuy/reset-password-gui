@@ -5,22 +5,23 @@ const useStyles = makeStyles({
   root: {
     fontWeight: 700,
     textAlign: 'left',
-    marginRight:'auto'
+    marginRight: 'auto',
+    color: '#DCD8E5'
   }
 });
 
-const Heading = ({text}) => {
+const Heading = ({ text }) => {
   const classes = useStyles();
   return (
-      <Typography
-        variant="h3"
-        classes={{
-          root: classes.root
-        }}
-        gutterBottom
-      >
-        {text}
-      </Typography>
+    <Typography
+      variant="h3"
+      classes={{
+        root: classes.root
+      }}
+      gutterBottom
+    >
+      {text}
+    </Typography>
   );
 };
 
