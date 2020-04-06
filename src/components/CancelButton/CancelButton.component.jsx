@@ -7,7 +7,7 @@ const useStyles = makeStyles({
   }
 });
 
-const CancelButton = ({ text }) => {
+const CancelButton = ({ text, onClick }) => {
   const classes = useStyles();
   return (
     <Button
@@ -15,6 +15,7 @@ const CancelButton = ({ text }) => {
       classes={{
         root: classes.root
       }}
+      onClick={() => window.close()}
     >
       {text}
     </Button>

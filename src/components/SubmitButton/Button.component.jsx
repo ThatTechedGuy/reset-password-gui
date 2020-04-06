@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, makeStyles } from '@material-ui/core';
+import Form from './../../components/FormControl/FormControl.component';
 
 const useStyles = makeStyles({
   root: {
-    marginTop: '1rem', 
+    marginTop: '1rem',
     marginRight: 'auto',
     borderRadius: '100px',
     backgroundColor: '#773FE5',
@@ -13,16 +14,19 @@ const useStyles = makeStyles({
 const SubmitButton = ({ text }) => {
   const classes = useStyles();
   return (
-    <Button
-      variant="contained"
-      size="large"
-      color="primary"
-      classes={{
+    <Form>
+      <Button
+        variant="contained"
+        size="large"
+        color="primary"
+        classes={{
           root: classes.root
-      }}
-    >
-      {text}
-    </Button>
+        }}
+        type="submit"
+      >
+        {text}
+      </Button>
+    </Form>
   );
 };
 

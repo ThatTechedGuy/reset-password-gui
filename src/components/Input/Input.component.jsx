@@ -4,55 +4,38 @@ import IconButton from '@material-ui/core/IconButton';
 import FilledInput from '@material-ui/core/FilledInput';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import { makeStyles } from '@material-ui/core';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Form from './../../components/FormControl/FormControl.component';
 
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-    marginTop: '1rem',
-    marginBottom: '1rem'
-  }
-});
 
-const Input = ({ text }) => {
+const Input = ({ text, id , handleChange, error, errorMessage, value}) => {
   const [values, setValues] = React.useState({
-    password: '',
     showPassword: false
   });
 
-  const classes = useStyles();
-
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
 
   const handleClickShowPassword = () => {
-    setValues({ ...values, showPassword: !values.showPassword });
+    setValues({showPassword: !values.showPassword });
   };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
 
+
+
   return (
-    <FormControl
-      variant="filled"
-      classes={{
-        root: classes.root,
-        label: classes.label
-      }}
-    >
-      <InputLabel htmlFor="filled-adornment-password">{text}</InputLabel>
+    <Form>
+      <InputLabel htmlFor={id}>{text}</InputLabel>
       <FilledInput
         required
-        id="filled-adornment-password"
+        id={id}
+        error={error}
         type={values.showPassword ? 'text' : 'password'}
-        value={values.password}
-        onChange={handleChange('password')}
-        classes={{ label: classes.label }}
+        value={value}
+        onChange={(e) => handleChange(e)}
         endAdornment={
           <InputAdornment position="end">
             <IconButton
@@ -66,7 +49,8 @@ const Input = ({ text }) => {
           </InputAdornment>
         }
       />
-    </FormControl>
+      <FormHelperText error={error} id="component-helper-text">{error === true? errorMessage : ''}</FormHelperText>
+    </Form>
   );
 };
 
